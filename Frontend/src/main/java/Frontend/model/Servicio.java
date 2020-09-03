@@ -14,11 +14,12 @@ public class Servicio {
     private String nombre;
     private String tipo;
     private int cantidad;
-    private String unidad;
+    private Unidad unidad;
     private double precioUnitario;
     private double impuesto;
     private double subTotal;
     private double total;
+    private String actividad;
     private String descripcion;
 
     /**
@@ -37,11 +38,12 @@ public class Servicio {
      * @param impuesto
      * @param subTotal
      * @param total
+     * @param actividad
      * @param descripcion 
      */
     public Servicio(String id, String nombre, String tipo, int cantidad, 
-            String unidad, double precioUnitario, double impuesto, 
-            double subTotal, double total, String descripcion) {
+            Unidad unidad, double precioUnitario, double impuesto, 
+            double subTotal, double total, String actividad, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -51,6 +53,7 @@ public class Servicio {
         this.impuesto = impuesto;
         this.subTotal = subTotal;
         this.total = total;
+        this.actividad = actividad;
         this.descripcion = descripcion;
     }
 
@@ -70,7 +73,7 @@ public class Servicio {
         return cantidad;
     }
 
-    public String getUnidad() {
+    public Unidad getUnidad() {
         return unidad;
     }
 
@@ -88,6 +91,10 @@ public class Servicio {
 
     public double getTotal() {
         return total;
+    }
+    
+    public String getActividad() {
+        return actividad;
     }
 
     public String getDescripcion() {
@@ -110,7 +117,7 @@ public class Servicio {
         this.cantidad = cantidad;
     }
 
-    public void setUnidad(String unidad) {
+    public void setUnidad(Unidad unidad) {
         this.unidad = unidad;
     }
 
@@ -129,6 +136,10 @@ public class Servicio {
     public void setTotal(double total) {
         this.total = total;
     }
+    
+    public void setActividad(String actividad) {
+        this.actividad = actividad;
+    }
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
@@ -146,6 +157,7 @@ public class Servicio {
                 ", impuesto=" + impuesto + 
                 ", subTotal=" + subTotal + 
                 ", total=" + total +
+                ", actividad=" + actividad +
                 ", descripcion=" + descripcion + '}';
     }
 }
