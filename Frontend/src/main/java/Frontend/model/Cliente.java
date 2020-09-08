@@ -11,8 +11,8 @@ package Frontend.model;
  */
 public class Cliente {
     
-    private int tipo;
-    private int numero;
+    private int id;
+    private String tipo;
     private String nombre;
     private String telefono;
     private Ubicacion direccion;
@@ -25,29 +25,35 @@ public class Cliente {
 
  /**
      * Constructor con parametros
+     * @param id
      * @param tipo
-     * @param numero 
      * @param nombre
      * @param telefono
      * @param direccion
      * @param correo
      */
-    public Cliente(int tipo,int numero,String nombre,
+    public Cliente(int id, String tipo,String nombre,
             String telefono,Ubicacion direccion,String correo){
+        
+        this.id = id;
         this.tipo=tipo;
-        this.numero=numero;
         this.nombre=nombre;
         this.telefono=telefono;
         this.direccion=direccion;
 }
 
-    public void setTipo(int tipo){
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setTipo(String tipo){
         this.tipo=tipo;
     }
 
-    public void setNumero(int numero){
-        this.numero=numero;
-    }
 
     public void setNombre(String nombre){
         this.nombre=nombre;
@@ -65,12 +71,8 @@ public class Cliente {
         this.correo=correo;
     }
 
-    public int getTipo(){
+    public String getTipo(){
         return tipo;
-    }
-
-    public int getNumero(){
-        return numero;
     }
 
     public String getNombre(){
@@ -88,15 +90,16 @@ public class Cliente {
     public String getCorreo(){
         return correo;
     }
+    
+    
 
     @Override
     public String toString() {
-        return "Cliente{" + 
-                "tipo=" + tipo + 
-                ", numero=" + numero + 
-                ", nombre=" + nombre + 
-                ", telefono=" + telefono + 
-                ", direccion=" + direccion + 
+        return "Cliente{" + "id=" + id +
+                ", tipo=" + tipo + 
+                ", nombre=" + nombre + ", "
+                + "telefono=" + telefono + ","
+                + " direccion=" + direccion +
                 ", correo=" + correo + '}';
     }
 }

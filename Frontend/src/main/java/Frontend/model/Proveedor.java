@@ -11,19 +11,19 @@ package Frontend.model;
  */
 public class Proveedor {
     private int id;
-  private String nombre;
-  private String telefono;
-  private String correo;
-  private Ubicacion ubicacion;
+    private String nombre;
+    private String telefono;
+    private String correo;
+    private Ubicacion ubicacion;
 
-  /**
-   * 
-   * @param id id proveedor
-   * @param nombre nombre del proovedor
-   * @param telefono telefono del proovedor
-   * @param correo correo del proovedor
-   * @param ubicacion ubicacion del proveedor
-   */
+    /**
+     * 
+     * @param id id proveedor
+     * @param nombre nombre del proovedor
+     * @param telefono telefono del proovedor
+     * @param correo correo del proovedor
+     * @param ubicacion ubicacion del proveedor
+     */
     public Proveedor(int id, String nombre, String telefono, String correo, 
             Ubicacion ubicacion) {
         this.id = id;
@@ -32,11 +32,11 @@ public class Proveedor {
         this.correo = correo;
         this.ubicacion = ubicacion;
     }
-  /**
-   * Constructor sin parametros
-   */
+    /**
+     * Constructor sin parametros
+     */
     public Proveedor(){
-    
+
     }
 
     public int getId() {
@@ -85,6 +85,6 @@ public class Proveedor {
                 ", nombre=" + nombre + ", telefono=" + telefono +
                 ", correo=" + correo + ", "
                 + "ubicacion=" + ubicacion + '}';
-               
+
     }
 }

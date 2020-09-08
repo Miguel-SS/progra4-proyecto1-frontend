@@ -19,8 +19,9 @@ public class Servicio {
     private double impuesto;
     private double subTotal;
     private double total;
-    private String actividad;
     private String descripcion;
+    
+
 
     /**
      * Constructor por defecto
@@ -38,12 +39,11 @@ public class Servicio {
      * @param impuesto
      * @param subTotal
      * @param total
-     * @param actividad
      * @param descripcion 
      */
     public Servicio(String id, String nombre, String tipo, int cantidad, 
             Unidad unidad, double precioUnitario, double impuesto, 
-            double subTotal, double total, String actividad, String descripcion) {
+            double subTotal, double total,String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -53,7 +53,7 @@ public class Servicio {
         this.impuesto = impuesto;
         this.subTotal = subTotal;
         this.total = total;
-        this.actividad = actividad;
+
         this.descripcion = descripcion;
     }
 
@@ -93,9 +93,6 @@ public class Servicio {
         return total;
     }
     
-    public String getActividad() {
-        return actividad;
-    }
 
     public String getDescripcion() {
         return descripcion;
@@ -137,9 +134,6 @@ public class Servicio {
         this.total = total;
     }
     
-    public void setActividad(String actividad) {
-        this.actividad = actividad;
-    }
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
@@ -157,7 +151,6 @@ public class Servicio {
                 ", impuesto=" + impuesto + 
                 ", subTotal=" + subTotal + 
                 ", total=" + total +
-                ", actividad=" + actividad +
                 ", descripcion=" + descripcion + '}';
     }
 }

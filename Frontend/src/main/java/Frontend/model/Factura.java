@@ -5,18 +5,20 @@
  */
 package Frontend.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author Gabriela
  */
 public class Factura {
-    
-  private int id;
+    private int id;
     private int clave;
     private Date fecha;
-    private Cliente idCliente;
+
+    private Cliente cliente;
     private Proveedor idProveedor;
     private Condicion condicion;
     private String medioPago;
@@ -25,15 +27,19 @@ public class Factura {
     private double subTotal;
     private double impuesto;
     private double neto;
+    
+    private List<Servicio> servicios;
+    
 
     /**
      * Constructor sin parametros
      */
     public Factura() {
     }
-    
+
     /**
      * Constructor con parametros
+     *
      * @param id
      * @param clave
      * @param fecha
@@ -45,16 +51,17 @@ public class Factura {
      * @param montoTotal
      * @param subTotal
      * @param impuesto
-     * @param neto 
+     * @param neto
      */
-    public Factura(int id, int clave, Date fecha, Cliente idCliente, Proveedor
-            idProveedor, Condicion condicion, String medioPago, String 
-                    observacion, double montoTotal, double subTotal, 
+    public Factura(int id, int clave, Date fecha, Cliente idCliente, 
+                    Proveedor idProveedor, Condicion condicion, 
+                    String medioPago,String observacion,
+                    double montoTotal, double subTotal,
                     double impuesto, double neto) {
         this.id = id;
         this.clave = clave;
         this.fecha = fecha;
-        this.idCliente = idCliente;
+        this.cliente = idCliente;
         this.idProveedor = idProveedor;
         this.condicion = condicion;
         this.medioPago = medioPago;
@@ -63,8 +70,10 @@ public class Factura {
         this.subTotal = subTotal;
         this.impuesto = impuesto;
         this.neto = neto;
+        servicios = new ArrayList<>();
     }
 
+    
     public int getId() {
         return id;
     }
@@ -78,7 +87,7 @@ public class Factura {
     }
 
     public Cliente getIdCliente() {
-        return idCliente;
+        return cliente;
     }
 
     public Proveedor getIdProveedor() {
@@ -126,7 +135,7 @@ public class Factura {
     }
 
     public void setIdCliente(Cliente idCliente) {
-        this.idCliente = idCliente;
+        this.cliente = idCliente;
     }
 
     public void setIdProveedor(Proveedor idProveedor) {
@@ -161,25 +170,38 @@ public class Factura {
         this.neto = neto;
     }
 
-   @Override
-    public String toString() {
-        return "Factura{" + 
-                "id=" + id + 
-                ", clave=" + clave +
-                 ", fecha=" + fecha + 
-                ", idCliente=" + idCliente + 
-                ", idProveedor=" +  idProveedor + 
-                ", condicion=" + condicion 
-                + ", medioPago="  + medioPago +
-                ", observacion=" + observacion +
-                ", montoTotal=" + montoTotal + 
-                ", subTotal=" + subTotal + 
-                ", impuesto="  + impuesto + 
-                ", neto=" + neto + '}';
+    public Cliente getCliente() {
+        return cliente;
     }
-    
-    
-    
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<Servicio> getServicios() {
+        return servicios;
+    }
+
+    public void setServicios(List<Servicio> servicios) {
+        this.servicios = servicios;
+    }
+
+    @Override
+    public String toString() {
+        return "Factura{" + "id=" + id + 
+               ", clave=" + clave + 
+               ", fecha=" + fecha + 
+               ", cliente=" + cliente + 
+               ", idProveedor=" + idProveedor + 
+               ", condicion=" + condicion + 
+               ", medioPago=" + medioPago + 
+               ", observacion=" + observacion + 
+               ", montoTotal=" + montoTotal + 
+               ", subTotal=" + subTotal + 
+               ", impuesto=" + impuesto + 
+               ", neto=" + neto + 
+               ", servicios=" + servicios + '}';
+    }
     
 }
 
